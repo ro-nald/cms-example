@@ -11,6 +11,9 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     env:
       # This pulls the environment from the trigger or defaults to dev
       ENVIRONMENT: ${{ github.event.inputs.environment || 'dev' }}
